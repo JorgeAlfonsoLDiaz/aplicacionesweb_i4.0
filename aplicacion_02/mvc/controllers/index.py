@@ -1,7 +1,14 @@
 import web
 
-render = web.template.render('mvc/views/index.html')
+render = web.template.render('mvc/views/')
 
 class Index:
     def GET(self):
-        return render.index()
+        try:
+            return render.inde()
+        except Exception as e:
+            print(f"Error 101 - index {e.args}")
+            return "Oops! \n Algo salió mal."
+
+        
+    
