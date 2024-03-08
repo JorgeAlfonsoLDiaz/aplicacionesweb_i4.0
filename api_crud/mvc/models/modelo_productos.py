@@ -1,13 +1,5 @@
 import web, requests, json
 
-URI = "https://api-crud-4e49c699968d.herokuapp.com/"
-
-response = requests.get(URI)
-response_json = json.loads(response.text)
-
-response_length = len(response_json)
-
-
 
 class Producto:
     def __init__(self):

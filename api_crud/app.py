@@ -2,7 +2,7 @@
 import web
 
 #  Rutas de los controladores
-urls = ("/", "mvc.controllers.index.Calculadora")
+urls = ("/", "mvc.controllers.index.Index")
 app = web.application(urls, globals())
 
 #  Punto de entrada

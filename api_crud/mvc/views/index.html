@@ -1,3 +1,5 @@
+$def with (productos)
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,7 +32,16 @@
                 </tr>
             </thead>
             <tbody id="datos">
-
+                $for producto in productos:
+                    <tr>
+                        <td>$producto['nombre']</td>
+                        <td>$producto['descripción']</td>
+                        <td>$producto['precio']</td>
+                        <td>$producto['stock']</td>
+                        <td><a href="#" class="opciones">ver</a></td>
+                        <td><a href="#" class="opciones">editar</a></td>
+                        <td><a href="#" class="opciones">borrar</a></td>
+                    </tr>
             </tbody>
 
         </table>
