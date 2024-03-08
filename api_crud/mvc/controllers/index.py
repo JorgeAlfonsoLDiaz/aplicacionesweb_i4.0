@@ -1,7 +1,7 @@
 import web
 from models.modelo_productos import Producto
 
-render = web.template.render('views/')
+render = web.template.render('mvc/views/')
 modelo_producto = Producto()
 
 class Index:
