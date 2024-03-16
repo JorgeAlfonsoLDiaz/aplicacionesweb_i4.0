@@ -6,12 +6,11 @@ $def with (productos)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | Productos</title>
+    <title>Inicio | Inventario</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 
 <body>
@@ -19,11 +18,14 @@ $def with (productos)
         <div class="center-1">
             <h1>Productos</h1>
 
-            <a href="insertar">insertar</a>
+            <button>Nuevo</button>
         </div>
+
+        Página 1 - Mostrando 20 de 100
         <table>
             <thead>
                 <tr>
+                    <th>Imagen</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
                     <th>Precio</th>
@@ -34,6 +36,7 @@ $def with (productos)
             <tbody id="datos">
                 $for producto in productos:
                     <tr>
+                        <td>Imagen</td>
                         <td>$producto['nombre']</td>
                         <td>$producto['descripción']</td>
                         <td>$producto['precio']</td>
@@ -43,8 +46,8 @@ $def with (productos)
                         <td><a href="#" class="opciones">borrar</a></td>
                     </tr>
             </tbody>
-
         </table>
+
     </div>
 </body>
 

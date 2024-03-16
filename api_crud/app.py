@@ -2,7 +2,12 @@
 import web
 
 #  Rutas de los controladores
-urls = ("/", "mvc.controllers.index.Index",)
+urls = (
+    "/", "mvc.controllers.listar_productos.Listar",
+    "/insertar", "mvc.controllers.insertar_producto.Insertar",
+    "/borrar", "mvc.controllers.borrar_producto.Listar",
+    "/actualizar", "mvc.controllers.actualizar_producto.Actualizar",
+    "/ver", "mvc.controllers.ver_producto.Ver")
 app = web.application(urls, globals())
 
 #  Punto de entrada
