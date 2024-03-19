@@ -1,26 +1,29 @@
 $def with (producto)
-$var title: Detalles: $producto['nombre'] | Inventario
+$var title: Actualizar: $producto['nombre'] | Inventario
 
 <div class="center-content">
     <div class="center-1">
-        <h1>Detalles del Producto</h1>
+        <h1>Actualizar Producto: $producto['nombre']</h1>
     </div>
 
     <div>
-        <img src="img" alt="Imagen">
+        <form method="post">
+            <img src="img" alt="Imagen">
+            <label for="name">Nombre: </label>
+            <input type="text" name="name" id="name" value="${producto['nombre']}">
 
-        <label for="name">Nombre: </label>
-        <input type="text" name="name" id="name" value="${producto['nombre']}">
+            <label for="description">Descripción: </label>
+            <textarea name="description" id="description" cols="30" rows="5">$producto['descripcion']</textarea>
 
-        <label for="description">Descripción: </label>
-        <textarea name="description" id="description" cols="30" rows="5">$producto['descripcion']</textarea>
+            <label for="cost">Precio:</label>
+            <input type="number" name="cost" id="cost" value="${producto['precio']}" min="0" step="0.01">
 
-        <label for="cost">Precio:</label>
-        <input type="text" name="cost" id="cost" value="${producto['precio']}">
+            <label for="stock">Existencias:</label>
+            <input type="number" name="stock" id="stock" value="${producto['existencias']}" min="0" max="9999">
 
-        <label for="stock">Existencias:</label>
-        <input type="text" name="stock" id="stock" value="${producto['existencias']}">
+            <a href="/"><input type="button" value="Cancelar"></a>
+            <button type="submit">Actualizar</button>
+        </form>
         
-        <a href="/"><input type="button" value="Cancelar"></a>
     </div>
 </div>

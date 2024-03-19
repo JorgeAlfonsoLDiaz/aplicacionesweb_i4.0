@@ -51,3 +51,20 @@ class Producto:
         request_delete = requests.delete(delete_uri)
 
         return request_delete
+
+    def actualizar_producto(self, id, name, description, cost, stock):
+
+        put_uri = f"{self.bd}items/{id}"
+        req_str = {
+            "name": name,
+            "description": description,
+            "cost": cost,
+            "stock": stock
+        }
+        req_json = json.dumps(req_str)
+
+        header = {'Content-Type': 'application/json'}
+
+        request_put = requests.put(put_uri, headers=header, data=req_json)
+
+        return request_put
