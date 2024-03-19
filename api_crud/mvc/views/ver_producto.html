@@ -1,41 +1,26 @@
-<!DOCTYPE html>
-<html lang="es">
+$def with (producto)
+$var title: Detalles: $producto['nombre'] | Inventario
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de {producto}| Productos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <div class="center-content">
-        <div class="center-1">
-            <h1>Detalles del Producto</h1>
-        </div>
-
-        <div>
-            <img src="img" alt="Imagen">
-
-            <label for="name">Nombre: </label>
-            <input type="text" name="name" id="name" value="producto" readonly>
-
-            <label for="description">Descripción: </label>
-            <textarea name="description" id="description" cols="30" rows="5" readonly>descripción</textarea>
-
-            <label for="cost">Precio:</label>
-            <input type="text" name="cost" id="cost" value="costo" readonly>
-
-            <label for="stock">Existencias:</label>
-            <input type="text" name="stock" id="stock" value="stock" readonly>
-
-
-            <input type="button" value="Regresar">
-        </div>
+<div class="center-content">
+    <div class="center-1">
+        <h1>Detalles del Producto</h1>
     </div>
-</body>
 
-</html>
+    <div>
+        <img src="img" alt="Imagen">
+
+        <label for="name">Nombre: </label>
+        <input type="text" name="name" id="name" value="${producto['nombre']}" readonly>
+
+        <label for="description">Descripción: </label>
+        <textarea name="description" id="description" cols="30" rows="5" readonly>$producto['descripcion']</textarea>
+
+        <label for="cost">Precio:</label>
+        <input type="text" name="cost" id="cost" value="${producto['precio']}" readonly>
+
+        <label for="stock">Existencias:</label>
+        <input type="text" name="stock" id="stock" value="${producto['existencias']}" readonly>
+
+        <a href="/"><input type="button" value="Regresar"></a>
+    </div>
+</div>

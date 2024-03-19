@@ -1,40 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
+$var title: Nuevo Artículo| Inventario
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Artículo| Inventario</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <div class="center-content">
-        <div class="center-1">
-            <h1>Insertar Nuevo Producto</h1>
-        </div>
-        
-        <div>
+<div class="center-content">
+    <div class="center-1">
+        <h1>Insertar Nuevo Producto</h1>
+    </div>
+    
+    <div>
+        <form method="post">
             <label for="name">Nombre: </label>
-            <input type="text" name="name" id="name" placeholder="Nombre del artículo">
+            <input type="text" name="name" id="name" placeholder="Nombre del artículo" required>
 
             <label for="description">Descripción: </label>
-            <textarea name="description" id="description" cols="30" rows="5" placeholder="Inserta la descripción del producto"></textarea>
+            <textarea name="description" id="description" cols="30" rows="5" placeholder="Inserta la descripción del producto" required></textarea>
 
             <label for="cost">Precio:</label>
-            <input type="number" name="cost" id="cost" min="0">
+            <input type="number" name="cost" id="cost" min="0" required>
 
             <label for="stock">Existencias:</label>
-            <input type="number" name="stock" id="stock" min="0" max="999">
+            <input type="number" name="stock" id="stock" min="0" max="999" required>
             
             <input type="file" name="image" id="image">
 
-            <input type="button" value="Insertar">
-        </div>
+            <button type="submit">Insertar</button>
+        </form>
     </div>
-</body>
-
-</html>
+</div>
