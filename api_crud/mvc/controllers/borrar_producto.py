@@ -1,7 +1,7 @@
 import web
 from mvc.models.modelo_productos import Producto
 
-render = web.template.render('mvc/views/')
+render = web.template.render('mvc/views/', base='base_layout')
 modelo_producto = Producto()
 
 class Eliminar:

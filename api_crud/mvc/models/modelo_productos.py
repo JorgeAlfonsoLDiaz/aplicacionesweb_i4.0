@@ -6,10 +6,15 @@ class Producto:
         URI = "https://api-crud-4e49c699968d.herokuapp.com/"
 
         self.bd = URI
-    def obtener_productos(self):
-        response_uri = requests.get(self.bd)
+    def obtener_productos(self, name):
+        query_param = {
+            "name": name
+        }
+        response_uri = requests.get(self.bd, params=query_param)
+        
         response_json = json.loads(response_uri.text)
         
+
         self.length = len(response_json)
         self.response = response_json
 

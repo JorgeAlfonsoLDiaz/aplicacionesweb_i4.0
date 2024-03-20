@@ -1,19 +1,19 @@
-$def with (productos)
+$def with (productos, name, count, total_count)
 $var title: Inicio | Inventario
 
 <div class="center-content">
     <div class="center-1">
         <h1>Productos</h1>
         <div>
-            <form action="/" method="get">
-                <input type="text" name="name" id="name" placeholder="Buscar artículo">
+            <form method="GET">
+                <input type="text" name="name" id="name" placeholder="Buscar artículo" value="${name}">
                 <button type="submit">Buscar</button>
             </form>
         </div>
         <a href="/insertar"><button>Nuevo</button></a>
     </div>
 
-    Página 1 - Mostrando 20 de 100
+    Página 1 - Mostrando $count de $total_count
     <table>
         <thead>
             <tr>

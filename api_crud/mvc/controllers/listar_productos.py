@@ -6,6 +6,18 @@ modelo_producto = Producto()
 
 class Listar:
     def GET(self):
-        productos = modelo_producto.obtener_productos()
-        return render.lista_productos(productos)
+        query = web.input()
+        name = query.get('name')
+
+        whole_list = modelo_producto.obtener_productos(name="")
+        total_count = modelo_producto.length
+
+        if name:
+            productos = modelo_producto.obtener_productos(name)
+        else:
+            productos = modelo_producto.obtener_productos(name="")
         
+        count = modelo_producto.length
+
+        return render.lista_productos(productos, name, count, total_count)
+    

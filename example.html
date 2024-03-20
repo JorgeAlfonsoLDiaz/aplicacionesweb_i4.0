@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$content.title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h1 class="header center">Actualizar Producto: $producto['nombre']</h1>
+        </div>
+
+        <div class="row">
+            <form class="col s12" method="post">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <img class="responsive-img" src="img" alt="Imagen">
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="name" type="text" class="validate" name="name" value="${producto['nombre']}">
+                        <label for="name">Nombre</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" class="materialize-textarea"
+                            name="description">$producto['descripcion']</textarea>
+                        <label for="description">Descripción</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="cost" type="number" class="validate" name="cost" value="${producto['precio']}"
+                            min="0" step="0.01">
+                        <label for="cost">Precio</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="stock" type="number" class="validate" name="stock" value="${producto['existencias']}"
+                            min="0" max="9999">
+                        <label for="stock">Existencias</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <a href="/" class="btn waves-effect waves-light">Cancelar</a>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light right" type="submit">Actualizar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
